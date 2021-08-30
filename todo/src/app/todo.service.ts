@@ -7,7 +7,7 @@ export class TodoService {
   public todos$: BehaviorSubject<Todo[]> = new BehaviorSubject([
     {
       message: 'manger une pizza',
-      done: false,
+      done: false
     }
   ]);
 
