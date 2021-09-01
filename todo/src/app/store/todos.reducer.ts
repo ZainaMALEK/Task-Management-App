@@ -5,8 +5,18 @@ export interface TodoState {
  datas: Todo[];
 }
 
+const initialState ={
+  datas: [{
+    message:'manger une pizza',
+    done: false
+  }]
+}
 
-export function todosReducer( state : TodoState, action: Action ) : TodoState {
+export function todosReducer( state : TodoState = initialState, action: Action ) : TodoState {
+  console.log(state);
+  console.log(action);
+
+
   return state;
 }
 

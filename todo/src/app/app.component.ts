@@ -5,6 +5,9 @@ import { Todo } from './todo.model';
 import { TodoService } from './todo.service';
 import { Store } from '@ngrx/store';
 import { State } from './store';
+import { TODO_CREATE } from './store/todos.actions';
+import { CreateTodo } from './store/todos.actions';
+
 
 @Component({
   selector: 'app-root',
@@ -19,7 +22,8 @@ export class AppComponent {
     private store: Store<State>) {}
 
   public addTodo() {
-    this.todoService.addTodo({ message: this.message, done: false });
+    //this.todoService.addTodo({ message: this.message, done: false });
+    this.store.dispatch( new CreateTodo({ message: this.message, done: false }))
   }
 
   public toggleTodo(index: number) {
